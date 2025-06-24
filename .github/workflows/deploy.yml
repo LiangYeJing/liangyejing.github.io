@@ -3,7 +3,7 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - hexo  # 你本地 Hexo 源码所在分支
+      - hexo  # 你的源码分支
 
 jobs:
   deploy:
@@ -30,5 +30,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: master
-          publish_dir: ./public
           keep_files: false
