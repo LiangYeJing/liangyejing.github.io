@@ -3,14 +3,14 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - hexo  # 你的源码分支
+      - hexo  # Hexo 源码分支
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -24,9 +24,9 @@ jobs:
       - name: Generate static files
         run: npx hexo generate
 
-      - name: Deploy to GitHub Pages (master branch)
+      - name: Deploy using SSH key
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
           publish_branch: gh-pages
