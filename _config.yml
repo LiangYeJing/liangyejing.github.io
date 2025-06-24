@@ -103,8 +103,8 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/LiangYeJing/liangyejing.github.io.git
-  branch: main
+  repo: git@github.com:LiangYeJing/liangyejing.github.io.git
+  branch: gh-pages
 
 search:
   path: search.xml
